@@ -6,11 +6,18 @@ on:
 jobs:
   
  build:
- 
-  runs-on: ubuntu-latest
-  
+  runs-on: ubuntu-latest  
   steps:   
    - uses: actions/checkout@v3
    - name: Run a multi-line script
      run: |
        echo "Hola mundo"
+ 
+ chekout:
+  runs-on: ubuntu-latest  
+  needs: build
+  steps:
+   - name: run checkout
+     run: |
+       echo "Aca se ejecuta el checkout"
+ 
